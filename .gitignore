@@ -10,6 +10,15 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# O projeto Unity deste repositório fica dentro da pasta Projeto.
+/Projeto/[Ll]ibrary/
+/Projeto/[Tt]emp/
+/Projeto/[Oo]bj/
+/Projeto/[Bb]uild/
+/Projeto/[Bb]uilds/
+/Projeto/[Ll]ogs/
+/Projeto/[Uu]ser[Ss]ettings/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/

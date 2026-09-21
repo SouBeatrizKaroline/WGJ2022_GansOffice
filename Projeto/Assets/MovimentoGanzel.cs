@@ -1,31 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class MovimentoGanzel : MonoBehaviour
 {
-    public float velocidade = 5f;  // Velocidade de movimento do Ganzel
+    [SerializeField, Min(0f)]
+    private float velocidade = 5f;
 
     private Rigidbody2D rb2d;
+    private Vector2 direcao;
 
-    private void Start()
+    private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.gravityScale = 0f;
+        rb2d.freezeRotation = true;
     }
 
     private void Update()
     {
-        float movimentoHorizontal = Input.GetAxis("Horizontal"); // Movimento Horizontal (para os lados)
-        float movimentoVertical = Input.GetAxis("Vertical"); // Movimento Vertical (para cima e para baixo)
+        float movimentoHorizontal = Input.GetAxisRaw("Horizontal");
+        float movimentoVertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 direcao = new Vector2(movimentoHorizontal, movimentoVertical);
+        direcao = new Vector2(movimentoHorizontal, movimentoVertical).normalized;
+    }
 
-        if (direcao.magnitude > 1f)
-        {
-            direcao.Normalize();
-        }
-
+    private void FixedUpdate()
+    {
         rb2d.velocity = direcao * velocidade;
+    }
+
+    private void OnDisable()
+    {
+        if (rb2d != null)
+        {
+            rb2d.velocity = Vector2.zero;
+        }
     }
 }
 

@@ -1,6 +1,6 @@
-# Projeto Colabora
+# GansOffice
 
-Projeto em andamento
+Jogo 2D criado durante a Women Game Jam 2022.
 
 > GansOffice |
 Plataforma de conexão entre voluntários e pessoas com perda total ou parcial da visão, para acesso a ambientes sem acessibilidade, com apoio em descrição de imagens e uso de plataformas.
@@ -19,7 +19,7 @@ Plataforma de conexão entre voluntários e pessoas com perda total ou parcial d
 
 > Gabrielle Bocal - Artista e animadora 2D
 
-## Em Densevolvimento atualmente por
+## Em desenvolvimento atualmente por
 
 - Beatriz Karoline
 
@@ -31,8 +31,28 @@ Plataforma de conexão entre voluntários e pessoas com perda total ou parcial d
 
 ## 🛠 Tecnologias
 
-- Unity
+- Unity 2021.3.17f1 (LTS)
 
 - C#
 
-- Git e Github
+- Git e GitHub
+
+## Como executar
+
+1. Instale a Unity `2021.3.17f1` pelo Unity Hub.
+2. No Unity Hub, selecione **Abrir** e escolha a pasta `Projeto`.
+3. Aguarde a Unity importar os recursos e recriar a pasta `Library`.
+4. Abra a cena `Assets/Scenes/SampleScene.unity`.
+5. Pressione **Play**.
+
+Use as teclas `WASD` ou as setas para movimentar Gansel pelo escritório.
+
+## Estrutura do repositório
+
+- `Projeto/Assets`: cena, scripts, arte e áudio do jogo.
+- `Projeto/Packages`: dependências da Unity.
+- `Projeto/ProjectSettings`: configurações do projeto.
+
+Pastas geradas pela Unity, como `Library`, `Temp`, `Logs`, `obj` e
+`UserSettings`, não devem ser versionadas. Elas são recriadas ao abrir o
+projeto e podem variar entre computadores.
